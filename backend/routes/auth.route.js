@@ -1,11 +1,11 @@
-import express from "express"
-import { signin, signout, signup } from "../controller/auth.controller.js"
-import { verifyToken } from "../utils/verifyUser.js"
+import express from "express";
+import { signin, signout, signup } from "../controller/auth.controller.js";
+import { verifyToken } from "../utils/verifyUser.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.post("/signup", signup)
-router.post("/signin", signin)
-router.get("/signout", verifyToken, signout)
+router.post("/signup", signup);
+router.post("/signin", signin);
+router.get("/signout", signout);
 
-export default router
+export default router;
