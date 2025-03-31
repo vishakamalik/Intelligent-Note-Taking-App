@@ -18,7 +18,7 @@ export const addNote = async (req, res, next) => {
   }
 
   let text = content || "";
-
+  // await Note.deleteMany();
   if (req.file) {
     const file = req.file;
 
@@ -45,7 +45,7 @@ export const addNote = async (req, res, next) => {
                 userId: id,
                 keywords,
               };
-              await Note.deleteMany();
+
               const note = await Note.create({ ...noteComposed });
 
               res.status(201).json({
@@ -59,7 +59,6 @@ export const addNote = async (req, res, next) => {
           }
         );
         return;
-
       } catch (error) {
         console.log(error);
         return next(errorHandler(500, "Error parsing PDF file...."));

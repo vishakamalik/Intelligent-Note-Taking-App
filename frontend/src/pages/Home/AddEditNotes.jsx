@@ -11,7 +11,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
   const [error, setError] = useState(null);
 
   //   Edit Note
-    const editNote = async () => {
+  const editNote = async () => {
     const noteId = noteData._id;
     console.log(noteId);
 
@@ -113,7 +113,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
         <input
           type="text"
           className="text-2xl text-slate-950 outline-none"
-          placeholder="Wake up at 6 a.m."
+          placeholder="Enter your title.."
           value={title}
           onChange={({ target }) => setTitle(target.value)}
         />
